@@ -14,6 +14,11 @@ use Throwable;
 
 class OrderController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +44,7 @@ class OrderController extends Controller
         try {
         $products = collect($request->products);
         $order = Order::create([
-            'user_id' => Auth::id(),
+            'user_id' => Auth::id(), // in case there
             'payment_method' => 'cod',
             'total' => 1000,
             'total' => Order::getCartTotal($products),
