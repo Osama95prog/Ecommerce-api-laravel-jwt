@@ -25,6 +25,9 @@ class OrderResource extends JsonResource
                     'id' => $this->user->id,
                     'name' => $this->user->name,
                 ],
+                'products' => $this->products,
+                'billingAddress' => $this->billingAddress,
+                'shippingAddress' => $this->shippingAddress,
             ],
         ];
     }
