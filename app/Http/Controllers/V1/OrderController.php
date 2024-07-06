@@ -72,10 +72,7 @@ class OrderController extends Controller
         throw $e;
         }
 
-    return response()->json([
-        'message' => 'The order created successfully',
-
-    ],201);
+    return new OrderResource($order);
 }
 
     /**

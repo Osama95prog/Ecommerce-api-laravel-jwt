@@ -50,10 +50,10 @@ class ProductController extends Controller
     public function destroy($id){
 
         Product::destroy($id);
-      
-        return response()->json([
+
+        return[
             'status' => 'success',
             'message' => 'Product deleted successfully',
-        ],204);
+        ];
     }
 }
